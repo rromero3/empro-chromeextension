@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Empro Ltda extension dev",
+  "description": "Esta herramienta ayuda a el personal de EMPRO LTDA tener todo organizado.",
+  "version": "3.2",
+  "icons": {
+    "128": "empro-small-logo.png"
+  },
+  "browser_action": {
+    "default_icon": "empro-small-logo.png",
+    "default_popup": "credentials.html"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "identity",
+     "identity.email", "tabs" ,"idle", "storage"
+  ],
+  "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
+  "oauth2": {
+     "client_id": "97048414778-ntjl7ahh9bgkjhd5jms9v0p1g74hl92t.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
+  , 
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAryNYE6XM88P5EANjagxeHOLaVkeaMdlXj/zopFz6vIt+pllhYVxgwXkJPeTx9SVgjnljWDhw2nHGVc0t5q2pLgIIDdxhjWGsvDt+wwjpfRAvrCEbsAAIWSVa6oxrKubf59P+4AXXIFm9tQl4kl8eDD8CTPNk7rZfSvTJN7erEvPIlvwoTWrmCZfMjDWXBaOBuqnjlfN7yomtLUqzkJv9gXuOaU9+tl62oT9lLGvYU7Iu7wqJA7gpw7P7ptBxxSa7ph4njE+WeIfhO+DS2kUdtM2m5zqlQn6NIMxVOVj6dAgkDk8jMsbZV+0yyPCq6r0CvXWXNnTxRsUOrKNCrDl8HQIDAQAB"
+}
