@@ -94,6 +94,11 @@ function initApp() {
   // [END authstatelistener]
 
   document.getElementById('quickstart-button').addEventListener('click', startSignIn, false);
+  $("a#dashboard").click(function() {
+        console.log("clicked on dashboard item");
+       var newURL = "https://empro-dashboard.firebaseapp.com";
+       chrome.tabs.create({ url: newURL });
+      });
 }
 
 /**
@@ -163,8 +168,9 @@ function startSignIn() {
      interactive = false;
      document.getElementById('ece-username').textContent = userInfo.email + ' ' + userInfo.id;
 
+     
 
-   chrome.identity.getAuthToken(null, function(tokena) {
+   chrome.identity.getAuthToken({ 'interactive': true }, function(tokena) {
     if (chrome.runtime.lastError && !interactive) {
       console.log('It was not possible to get a token programmatically.');
     } else if(chrome.runtime.lastError) {
